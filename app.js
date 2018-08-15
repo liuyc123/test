@@ -12,8 +12,11 @@ var static = 	require('koa-static');
 
 var session = 	require('koa-session');
 
+var bodyParser = require('koa-bodyparser');
 
 var app = new Koa();
+
+app.use(bodyParser());
 
 app.keys = ['some secret hurr'];
 const CONFIG = {
@@ -45,8 +48,8 @@ var admin =require('./routes/admin.js');
 
 
 
-router.use('/admin',admin)
-router.use('/api',api)
+router.use('/admin',admin);
+router.use('/api',api);
 router.use(index);
 
 

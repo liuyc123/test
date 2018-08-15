@@ -9,8 +9,8 @@ router.use(async(ctx,next)=>{
 	if(ctx.session.userinfo){
 		await next();
 	}else{
-
-		if(ctx.url=='/admin/login' || ctx.url=='/admin/doLogin'){
+		console.log(ctx.url);
+		if(ctx.url=='/admin/login' || ctx.url=='/admin/login/doLogin/'){
 			await next();
 
 		}else{
